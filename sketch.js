@@ -32,19 +32,20 @@ function draw() {
   rectMode(CENTER);
   background(230);
 
- if(keyCode == UP_ARROW)
- {
-	
-	
-	PaperObj.y=PaperObj.y+(-10);
- }
- 
- PaperObj.x=PaperObj.x+10;
+
  
  
   PaperObj.display()
   groundObject.display();
   dustbinObj.display();
  
+}
+
+
+function keyPressed() 
+{ 
+if (keyCode === UP_ARROW)
+{ Matter.Body.applyForce(PaperObj.body,PaperObj.body.position,{x:80,y:-145});
+ } 
 }
 
